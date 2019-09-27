@@ -1,0 +1,15 @@
+version: "3"
+services:
+
+  models:
+    image: tp33/django
+    volumes:
+      - /deploy-recipe-app/app
+    ports:
+      - "8001:8000"
+    networks:
+      - backend
+    command: bash -c "mod_wsgi-express start-server --working-directory /recipe_app --reload-on-changes /recipe_app/recipe_app/wsgi.py"
+
+networks:
+  backend:
