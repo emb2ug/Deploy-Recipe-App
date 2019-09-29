@@ -5,6 +5,7 @@ services:
     image: tp33/django
     volumes:
       - ./app:/app
+      - ./db:/db
     ports:
       - "8001:8000"
     networks:
